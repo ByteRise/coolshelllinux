@@ -36,8 +36,6 @@ void scanShell();
 void removeComments(const std::string& inputFile, const std::string& outputFile);
 void downloadPackage(const std::string& packageName, bool& isWslMode);
 void printComputerName(bool& isWslMode);
-bool changeDirectory(const std::string& path);
-void removeFile(const std::string& filename);
 void printCurrentPath();
 void printCurrentDate();
 void printCurrentTime();
