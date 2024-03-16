@@ -83,11 +83,6 @@ int main() {
         else if (command == "shifr") {
 
         }
-        else if (command == "cd" && tokens.size() > 1) {
-            if (!changeDirectory(tokens[1])) {
-                cerr << "Failed to change directory to: " << tokens[1] << endl;
-            }
-        }
         else if (command == "rf" && tokens.size() > 1) {
             string tokenString = "";
             for (const auto& token : tokens) {
@@ -96,9 +91,6 @@ int main() {
                 }
             }
             readFile(tokenString);
-        }
-        else if (command == "rm" && tokens.size() > 1) {
-            removeFile(tokens[1]);
         }
         else if (command == "ls") {
             listFilesInDirectory();
