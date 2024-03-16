@@ -7,7 +7,6 @@
 #include <filesystem>
 #include <fstream>
 #include <thread>
-#include <lmcons.h>
 #include <sstream>
 #include <regex>
 #include <openssl/evp.h>

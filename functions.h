@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <openssl/types.h>
-#include <conio.h>
 #include <cmath>
 
 enum class Color {
