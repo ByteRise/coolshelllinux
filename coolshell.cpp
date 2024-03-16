@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <sstream>
 #include <iomanip>
-#include <Windows.h>
 #include <filesystem>
 #include <fstream>
 #include <thread>
@@ -99,16 +98,6 @@ int main() {
                 cerr << "Error: " << e.what() << endl;
                 return 1;
             }
-        }
-        else if (command == "sudo") {
-            string cmdToExecute;
-            for (size_t i = 1; i < tokens.size(); ++i) {
-                cmdToExecute += tokens[i] + " ";
-            }
-
-            ShellExecute(NULL, L"runas", L"helper.exe", (LPCWSTR)cmdToExecute.c_str(), NULL, SW_SHOWNORMAL);
-
-
         }
         else if (command == "dc") {
             removeComments(tokens[1], tokens[2]);
