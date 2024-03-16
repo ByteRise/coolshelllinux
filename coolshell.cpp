@@ -9,7 +9,6 @@
 #include <thread>
 #include <sstream>
 #include <regex>
-#include <openssl/evp.h>
 #include <iomanip>
 #include "functions.h"
 
@@ -77,26 +76,6 @@ int main() {
         }
         else if (command == "scan") {
             scanShell();
-        }
-        else if (command == "hash") {
-            string file_path = "";
-            for (const auto& token : tokens) {
-                if (token != "hash") {
-                    file_path += token + " ";
-                }
-            }
-
-            try {
-                string sha256_hash = calcHash(file_path, EVP_sha256());
-                cout << "SHA256: " << sha256_hash << endl;
-
-                string md5_hash = calcHash(file_path, EVP_md5());
-                cout << "MD5: " << md5_hash << endl;
-            }
-            catch (const std::exception& e) {
-                cerr << "Error: " << e.what() << endl;
-                return 1;
-            }
         }
         else if (command == "dc") {
             removeComments(tokens[1], tokens[2]);
